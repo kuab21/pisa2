@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Kusiciel Sp. z o.o. — Testy wierności z piekielnym urokiem</title>
+  <meta name="description" content="Kusiciel Sp. z o.o. — testy wierności: Basic, Premium, Ultimate. Dyskretnie, profesjonalnie, z przymrużeniem oka." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --accent:#ff4d4d;
+      --muted:#9aa4b2;
+      --glass: rgba(255,255,255,0.04);
+      --glass-2: rgba(255,255,255,0.02);
+      --accent-2: #ff8a5b;
+      color-scheme: dark;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      background:
+        radial-gradient(1000px 600px at 10% 10%, rgba(255,77,77,0.04), transparent 10%),
+        linear-gradient(180deg, #071021 0%, #07101a 50%, #041018 100%);
+      color:#e6eef6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+    }
+    .container{max-width:1100px;margin:0 auto;padding:28px;}
+    header{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+    .logo{display:flex;gap:12px;align-items:center}
+    .logo .mark{
+      width:54px;height:54px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      display:flex;align-items:center;justify-content:center;font-weight:800;
+      box-shadow:0 6px 20px rgba(255,77,77,0.12);
+    }
+    .logo h1{font-size:18px;margin:0}
+    nav{display:flex;gap:18px;align-items:center}
+    nav a{color:var(--muted);text-decoration:none;font-weight:600;font-size:14px}
+    .hero{
+      display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin-top:22px;
+    }
+    .hero-card{
+      background:linear-gradient(180deg,var(--glass),transparent);
+      padding:28px;border-radius:14px;border:1px solid rgba(255,255,255,0.03);
+      box-shadow:0 10px 30px rgba(3,7,18,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
+    }
+    .hero h2{font-size:28px;margin:0 0 8px 0}
+    .hero p{color:var(--muted);margin:0 0 18px 0}
+    .cta-row{display:flex;gap:12px;align-items:center}
+    .btn{
+      padding:12px 16px;border-radius:10px;background:linear-gradient(90deg,var(--accent),var(--accent-2));
+      color:#07101a;font-weight:700;border:none;cursor:pointer;box-shadow:0 6px 18px rgba(255,77,77,0.12);
+    }
+    .btn.secondary{
+      background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);font-weight:700;
+    }
+    .price-card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+      padding:20px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);
+    }
+    .price-card h3{margin:0 0 6px 0}
+    .price{font-size:28px;font-weight:800;color:var(--accent);margin:6px 0}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+    .pkg{background:var(--card);padding:16px;border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
+    .pkg h4{margin:0 0 8px 0}
+    .muted{color:var(--muted);font-size:14px}
+    section{margin-top:28px}
+    .two-col{display:grid;grid-template-columns:1fr 360px;gap:20px;align-items:start}
+    .testimonials{display:flex;flex-direction:column;gap:12px}
+    .test{background:var(--glass-2);padding:14px;border-radius:10px;border:1px solid rgba(255,255,255,0.02)}
+    .team{display:flex;gap:12px;flex-wrap:wrap}
+    .member{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:12px;border-radius:10px;min-width:170px}
+    footer{margin-top:36px;border-top:1px solid rgba(255,255,255,0.03);padding-top:18px;color:var(--muted);font-size:14px;display:flex;justify-content:space-between;align-items:center}
+    .faq{display:grid;gap:10px}
+    .faq-item{background:var(--glass);padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.02)}
+    .small{font-size:13px;color:var(--muted)}
+    .pill{background:rgba(255,255,255,0.03);padding:6px 10px;border-radius:999px;font-weight:700;color:var(--accent);display:inline-block}
+    /* responsive */
+    @media (max-width:980px){.hero{grid-template-columns:1fr;}.two-col{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.logo h1{display:none}}
+    @media (max-width:480px){.container{padding:16px}.logo .mark{width:44px;height:44px}.hero h2{font-size:22px}}
+    /* simple floating badge */
+    .badge{position:fixed;right:18px;bottom:18px;background:linear-gradient(135deg,#ff6b6b,#ff9a6b);padding:12px 16px;border-radius:999px;color:#07101a;font-weight:800;box-shadow:0 8px 24px rgba(255,77,77,0.12);cursor:pointer}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <div class="mark">K</div>
+        <div>
+          <h1>Kusiciel Sp. z o.o.</h1>
+          <div class="small">Testy wierności • Dyskrecja • Piekielny urok</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#pakiety">Pakiety</a>
+        <a href="#opinie">Opinie</a>
+        <a href="#faq">FAQ</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="hero">
+        <div class="hero-card">
+          <h2>Twoja dziewczyna mówi, że kocha tylko Ciebie?</h2>
+          <p class="muted">My to sprawdzimy — profesjonalnie, dyskretnie i z piekielnym urokiem. Wybierz pakiet, zamów test i patrz (z dystansem).</p>
+
+          <div class="pill">Nowość 2025</div>
+
+          <div style="margin-top:16px" class="cta-row">
+            <button class="btn" onclick="document.getElementById('pakiety').scrollIntoView({behavior:'smooth'})">Zobacz pakiety</button>
+            <button class="btn secondary" onclick="document.getElementById('kontakt').scrollIntoView({behavior:'smooth'})">Skontaktuj się</button>
+          </div>
+
+          <div style="margin-top:18px" class="small muted">
+            Zaufanie to piękna rzecz. My wolimy dowody. 😉
+          </div>
+        </div>
+
+        <aside class="price-card">
+          <h3>Wybrany pakiet (przykład)</h3>
+          <div class="muted">Basic Pokusa</div>
+          <div class="price">199 zł</div>
+          <div class="muted">Wiadomość o 2:07, raport PDF i analiza „haha”.</div>
+          <div style="margin-top:12px" class="cta-row">
+            <button class="btn" onclick="alert('To demo — w realnej wersji tutaj byłaby płatność.')">Zamów Basic</button>
+          </div>
+        </aside>
+      </div>
+
+      <!-- Pakiety -->
+      <section id="pakiety">
+        <h2>Pakiety i cennik</h2>
+        <p class="muted">Od minimalistycznego pieszczoszka po telenowelowy finał — wybierz poziom dramatyzmu.</p>
+
+        <div class="grid" style="margin-top:12px">
+          <div class="pkg">
+            <h4>🧪 Basic Pokusa</h4>
+            <div class="muted">199 zł</div>
+            <p class="small">Wiadomość „hej, nie śpisz?” wysłana o 2:07; emoji 😏; raport PDF; analiza długości „haha”.</p>
+            <div style="margin-top:8px"><button class="btn" onclick="selectPackage('Basic Pokusa')">Wybierz</button></div>
+          </div>
+
+          <div class="pkg">
+            <h4>💃 Premium Kuszenie</h4>
+            <div class="muted">599 zł</div>
+            <p class="small">„Przypadkowe” spotkanie (kawiarnia/siłownia), aktor/aktorka, scenariusz i raport terenowy.</p>
+            <div style="margin-top:8px"><button class="btn" onclick="selectPackage('Premium Kuszenie')">Wybierz</button></div>
+          </div>
+
+          <div class="pkg">
+            <h4>🔥 Ultimate Temptation</h4>
+            <div class="muted">1999 zł</div>
+            <p class="small">Pełna operacja: wizyta kusiciela, analiza mikroekspresji, album „Wierność — edycja limitowana”.</p>
+            <div style="margin-top:8px"><button class="btn" onclick="selectPackage('Ultimate Temptation')">Wybierz</button></div>
+          </div>
+        </div>
+
+        <div style="margin-top:12px" class="pkg">
+          <h4>👑 Pakiet VIP „Zaufaj (albo nie)”</h4>
+          <div class="muted">4999 zł</div>
+          <p class="small">All inclusive: symulacje, konsultacje (psycholog lub barman), certyfikat w ramce z czarnego dębu.</p>
+          <div style="margin-top:8px"><button class="btn" onclick="selectPackage('VIP Zaufaj')">Wybierz</button></div>
+        </div>
+
+        <div style="margin-top:12px" class="small muted">
+          Dodatkowe usługi: „zniknięcie z czatu” 49 zł, polubienie starego zdjęcia 19 zł, „tajemniczy follower” 79 zł.
+        </div>
+      </section>
+
+      <section style="margin-top:22px">
+        <div class="two-col">
+          <div>
+            <h3 id="opinie">Opinie (z przymrużeniem oka)</h3>
+            <div class="testimonials">
+              <div class="test">💔 „Myślałem, że to żart. Teraz wiem, że mój związek też był.” – Kamil, 29</div>
+              <div class="test">😅 „Test zaliczony, teraz tylko czekam, aż Kusiciel sprawdzi mnie.” – Julia, 24</div>
+              <div class="test">🥂 „Ultimate Temptation uratował mnie przed ślubem. Dziękuję, Kusiciel.” – Paweł, 31</div>
+              <div class="test">👀 „Nie wiem, czy bardziej zakochałam się w teście, czy w kusicielu.” – anonimowo</div>
+            </div>
+
+            <h3 style="margin-top:16px">Raport z wierności Polaków 2025 (parodia)</h3>
+            <p class="small muted">72% twierdzi, że „to tylko rozmowa”. 18% przyznało, że testowali partnera przed modą. 5% zadaje pytanie: „A co, jeśli ja też zamówię test?”</p>
+          </div>
+
+          <aside>
+            <h3>Zespół Kusicieli</h3>
+            <div class="team">
+              <div class="member"><strong>Damian Pokusowski</strong><div class="small muted">Główny kusiciel. Uśmiech jak grzech.</div></div>
+              <div class="member"><strong>Ania Zdradliwa</strong><div class="small muted">Specjalistka od testów emocjonalnych.</div></div>
+              <div class="member"><strong>KUSIAK3000</strong><div class="small muted">Chatbot, który flirtuje lepiej niż Twój ex.</div></div>
+            </div>
+
+            <h4 style="margin-top:14px">Merch</h4>
+            <p class="small muted">Kubki „Nie sprawdzam — wierzę (z przymrużeniem oka)”, koszulki i naklejki. Zapałki: „Na wypadek, gdybyś chciał spalić mosty.” 🔥</p>
+          </aside>
+        </div>
+      </section>
+
+      <section id="faq" style="margin-top:22px">
+        <h3>FAQ (często zadawane pytania)</h3>
+        <div class="faq">
+          <div class="faq-item">
+            <strong>To legalne?</strong>
+            <div class="small muted">To parodia. W realnym świecie pamiętaj o etyce i prawie — nie podszywaj się i nie łam prywatności innych. Nasza strona to żart marketingowy.</div>
+          </div>
+          <div class="faq-item">
+            <strong>Czy testy są dyskretne?</strong>
+            <div class="small muted">Dyskrecja to nasz slogan. W wersji fejkowej wszystkie raporty mają ładne oprawy i 0 ujawnionych danych.</div>
+          </div>
+          <div class="faq-item">
+            <strong>Co jeśli test zmieni związek?</strong>
+            <div class="small muted">Może. Zalecamy szczere rozmowy i, ewentualnie, terapię. A my możemy wystawić kupon na drinka.</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="kontakt" style="margin-top:22px">
+        <h3>Kontakt</h3>
+        <p class="muted">Chcesz przetestować? Albo po prostu pogadać o morale i dramie? Napisz — odpowiemy (z lekkim uśmiechem).</p>
+
+        <form onsubmit="event.preventDefault(); alert('Dzięki! To demo — formularz nie wysyła danych. Imię: ' + (document.getElementById('name').value || '[brak]') );" style="margin-top:12px;display:grid;gap:8px;max-width:520px">
+          <input id="name" placeholder="Twoje imię" style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit" />
+          <input id="email" placeholder="Email" style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit" />
+          <select id="package" style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit">
+            <option>Wybierz pakiet</option>
+            <option>Basic Pokusa — 199 zł</option>
+            <option>Premium Kuszenie — 599 zł</option>
+            <option>Ultimate Temptation — 1999 zł</option>
+            <option>VIP Zaufaj — 4999 zł</option>
+          </select>
+          <textarea id="msg" placeholder="Krótki opis (opcjonalnie)" style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit;min-height:90px"></textarea>
+          <div style="display:flex;gap:10px">
+            <button class="btn" type="submit">Wyślij zapytanie</button>
+            <button type="button" class="btn secondary" onclick="alert('Demo: w prawdziwej wersji tu byłaby infolinia.')">Zadzwoń</button>
+          </div>
+        </form>
+
+        <div style="margin-top:12px" class="small muted">
+          Adres (fikcyjny): ul. Płomienna 13, 00-000 Piekielnice • Email: kontakt@kusiciel.fake
+        </div>
+      </section>
+
+      <footer>
+        <div class="small muted">© 2025 Kusiciel Sp. z o.o. • Wszystkie prawa (fikcyjnie) zastrzeżone.</div>
+        <div class="small muted">Uwaga prawna: Parodia. Nie odpowiadamy za złamane serca i spontaniczne oświadczyny.</div>
+      </footer>
+    </main>
+  </div>
+
+  <div class="badge" onclick="document.getElementById('kontakt').scrollIntoView({behavior:'smooth'})">Zamów test</div>
+
+  <script>
+    function selectPackage(name){
+      document.getElementById('package').value = name.includes('Basic') ? 'Basic Pokusa — 199 zł' : 
+        name.includes('Premium') ? 'Premium Kuszenie — 599 zł' :
+        name.includes('Ultimate') ? 'Ultimate Temptation — 1999 zł' :
+        name.includes('VIP') ? 'VIP Zaufaj — 4999 zł' : 'Wybierz pakiet';
+      document.getElementById('name').focus();
+      alert('Wybrano: ' + name + '. Formularz demo gotowy do wysłania (bez rzeczywistej wysyłki).');
+    }
+  </script>
+</body>
+</html>
